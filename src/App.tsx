@@ -1,25 +1,22 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Header} from './Header';
-import {Body} from './Body';
-import {Footer} from "./Footer";
 
 function App() {
 
-    let [students, setStudents] = useState([
-        {id: 1, name: 'James', age: 8},
-        {id: 2, name: 'James', age: 28},
-        {id: 3, name: 'James', age: 38},
-        {id: 4, name: 'James', age: 48},
-        {id: 5, name: 'James', age: 58},
-    ])
+    let [num, setNum] = useState(1)
+
+    const increment = () => {
+        setNum(num + 1)
+    }
+    const reset = () => {
+        setNum(0)
+    }
 
     return (
         <div className="App">
-            <Header titleForHeader={'New Header'}/>
-            <Body titleForBody={'New Body'}/>
-            <Footer titleForFooter={'New Footer'}/>
-
+            {num}
+            <button onClick={increment}>inc</button>
+            <button onClick={reset}>reset</button>
         </div>
     );
 }
