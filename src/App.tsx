@@ -1,24 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
+import {NewComponent} from "./newComponent";
 
-function App() {
-
-    let [num, setNum] = useState(1)
-
-    const increment = () => {
-        setNum(num + 1)
-    }
-    const reset = () => {
-        setNum(0)
-    }
-
+export const App = () => {
     return (
-        <div className="App">
-            {num}
-            <button onClick={increment}>inc</button>
-            <button onClick={reset}>reset</button>
+        <div>
+            <NewComponent clickFilter={click}/>
         </div>
-    );
+    )
 }
-
-export default App;
